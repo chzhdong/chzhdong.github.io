@@ -25,8 +25,6 @@ lang: 'zh_CN'
 
 ### 解题代码
 ```java
-import java.util.HashMap;
-
 class Solution {
     public int fourSumCount(int[] nums1, int[] nums2, int[] nums3, int[] nums4) {
         HashMap<Integer, Integer> mapa = new HashMap<>();
