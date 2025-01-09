@@ -1,10 +1,10 @@
 ---
 title: AOP
 published: 2024-12-27
-description: 'The custom AOP Proxy'
+description: 'Aspect-Oriented Programming'
 image: ''
-tags: ["Java", "AOP"]
-category: 'Spring'
+tags: ["Spring"]
+category: 'Java'
 draft: false 
 lang: 'zh_CN'
 ---

@@ -1,10 +1,10 @@
 ---
-title: 链表
+title: LinkArray
 published: 2024-12-24
-description: '链表解题总体'
+description: 'Conclusion of LinkArray'
 image: ''
 tags: ["LinkArray"]
-category: 'Coding'
+category: 'Algorithm'
 draft: false
 lang: 'zh_CN'
 ---

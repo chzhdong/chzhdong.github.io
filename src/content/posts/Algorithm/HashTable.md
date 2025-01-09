@@ -1,10 +1,10 @@
 ---
-title: 哈希表
+title: HashTable
 published: 2024-12-28
-description: '哈希表解题总结'
+description: 'Conclusion of HashTable'
 image: ''
 tags: ["HashTable"]
-category: 'Coding'
+category: 'Algorithm'
 draft: false
 lang: 'zh_CN'
 ---
@@ -21,7 +21,7 @@ lang: 'zh_CN'
 
 图的主要使用方法是需要查找以前访问过的元素，并记录访问过的元素的相关信息。
 
-## 注
+## 注意事项
 
 有些方法虽然需要使用已访问的元素，但是可能需要排除重复的元素等相关要求，可能直接使用哈希表并不合适；
 

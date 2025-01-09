@@ -1,10 +1,10 @@
 ---
-title: 数组
+title: Array
 published: 2024-12-20
-description: '数组解题总结'
+description: 'Conclusion for Array'
 image: ''
 tags: ["Array"]
-category: 'Coding'
+category: 'Algorithm'
 draft: false
 lang: 'zh_CN'
 ---
