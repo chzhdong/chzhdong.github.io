@@ -1,10 +1,10 @@
 ---
-title: Local Inference
+title: Inference Tools
 published: 2024-12-19
 description: 'The Local Inference for LLMs with existing repositories'
 image: ''
-tags: ["LLM", "Inference"]
-category: 'LLM'
+tags: ["Inference"]
+category: 'Tool'
 draft: false 
 lang: 'zh_CN'
 ---
