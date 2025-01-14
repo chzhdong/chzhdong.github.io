@@ -32,3 +32,14 @@ MySQL 会创建一个 root 用户，并提示输入 root 口令；
 ### 注意事项
 
 MySQL 的 bin 目录添加到系统的环境变量；
+
+## 教程
+
+### 登录
+
+一般而言，MySQL可以通过命令行进行登录，其登录的指令如下：
+
+```powershell
+mysql -u username -p
+# 输入密码即可
+```

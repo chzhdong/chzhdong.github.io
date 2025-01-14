@@ -1,9 +1,9 @@
 ---
-title: PagedAttention
+title: Efficient Memory Management for Large Language  Model Serving with PagedAttention
 published: 2024-12-25
 description: 'The paper reading note for PagedAttention'
 image: ''
-tags: [Paged Attention]
+tags: [Attention]
 category: 'Paper'
 draft: false 
 lang: 'zh_CN'
@@ -11,7 +11,7 @@ lang: 'zh_CN'
 
 ## 论文概述
 
-论文标题：Efficient Memory Management for Large Language  Model Serving with PagedAttention
+论文标题：**Efficient Memory Management for Large Language  Model Serving with PagedAttention**
 
 核心工作：对于大模型推理，一般通过批次化请求提升吞吐量。由于每个请求的 KV Cache 的空间是动态变化的，导致其内存管理由于片段和重复无法充分利用。为了解决该问题，参照操作系统的虚拟内存和页技术，提出了 PagedAttention实现**KV Cache近乎于无的浪费**以及**请求中和请求间 KV Cache 的灵活共享**，减少内存的使用。
 
