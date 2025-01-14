@@ -1,5 +1,5 @@
 ---
-title: Llumnix: Dynamic Scheduling for Large Language Model Serving
+title: Llumnix Dynamic Scheduling for Large Language Model Serving
 published: 2024-01-14
 description: 'The paper reading note for Llumnix'
 image: ''
