@@ -13,22 +13,16 @@ import PostMetadata from '../../components/PostMeta.astro'
 import ImageWrapper from '../../components/misc/ImageWrapper.astro'
 import { profileConfig, siteConfig } from '../../config'
 import { formatDateToYYYYMMDD } from '../../utils/date-utils'
-import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-  const isProduction = import.meta.env.PROD;
   const blogEntries = await getCollection('posts', ({ data }) => {
-    return isProduction ? data.draft !== true : true;
-  });
-
-  return blogEntries
-    .filter(entry => typeof entry.slug === 'string' && entry.slug.trim() !== '')
-    .map(entry => ({
-      params: { slug: entry.slug },
-      props: { entry },
-    }));
+    return Astro.site.production ? data.draft !== true : true
+  })
+  return blogEntries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }))
 }
-
 
 const { entry } = Astro.props
 const { Content, headings } = await entry.render()
