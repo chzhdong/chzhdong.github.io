@@ -1,6 +1,6 @@
 ---
 title: Llumnix Dynamic Scheduling for Large Language Model Serving
-published: 2024-01-14
+published: 2024-01-15
 description: 'The paper reading note for Llumnix'
 image: ''
 tags: [Scheduling]
@@ -42,7 +42,7 @@ lang: 'zh_CN'
 3. 提供请求优先级以提供隔离
 4. 饱和或耗尽实例以满足自动缩放
 
-![reschedule](./assets/rescheduling scenarios.png)
+![reschedule](./assets/scenarios.png)
 
 ### 实时迁移机制
 
@@ -89,7 +89,7 @@ Llumnix引入几乎无需停机时间的请求调度机制；对于任意长度�
 
 基于上述的实时迁移机制，推理系统需要追踪每个服务请求的状态已进行调度或迁移，这提出了较大的挑战；为了解决这个问题，论文提出了分布式的调度架构，即一个**cluster-level**的全局调度器和**instance-level**的本地调度器**llumet**。全局和本地调度器仅通过接口进行通信，使得两者有着清晰的分界。在论文中，全局调度其主要保存每个实例当前的显存负载情况，并基于该信息进行服务请求的派发和请求的迁移。对于**llumet**，其由一个本地调度器和迁移协调器组成，本地调度器主要计算当前的工作负载并与全局调度器交互 (注，该负载并不是物理负载，而是下文中的**virtual usage**)；同时，本地调度器决定当前实例的请求的迁移，并通过协调器实现请求的迁移。
 
-![image-20250115105537853](./assets/schedule architectrue.png)
+![image-20250115105537853](./assets/architectrue.png)
 
 ## 动态调度策略
 
@@ -107,7 +107,7 @@ Llumnix的调度目标主要为：
 
 对于正常的负载均衡，论文无需做任何处理，直接计算对于的物理空间即可；对于排队的请求，则需要在现有实例上添加排队请求来计算**virtual usage**；对于执行的优先级，则对于实例中的这些任务提供预留的**virtual usage**来减少干扰；但对于新实例加入或实例停机，则考虑正常的负载均衡或设置无限的**virtual usage**以强制迁移。
 
-![image-20250115111849573](./assets/virtual usage.png)
+![image-20250115111849573](./assets/virtualusage.png)
 
 ### 调度策略
 
@@ -116,6 +116,8 @@ Llumnix的调度目标主要为：
 对于服务请求的迁移，Llumnix是周期性触发的，即每个周期选择低于或超过对应阈值的实例，对两者进行服务请求的迁移。对于**llumlet**会优先选择优先级较低和序列长度较短的请求进行任务迁移。如果在迁移过程中，实例没有超过阈值，则取消迁移。
 
 对于自动缩放，Llumnix自动计算全部实例的平均空闲值，判断其是否位于阈值中；如果值位于阈值中，则正常运行，否则对负载最小的实例停机或者添加实例。
+
+![image-20250115162212261](./assets/algorithm.png)
 
 ## Llumnix 实现
 
