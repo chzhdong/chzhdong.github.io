@@ -1,7 +1,7 @@
 ---
 title: Docker
 published: 2025-01-08
-description: 'Docker'
+description: 'Docker Tutorial'
 image: ''
 tags: ["Docker"]
 category: 'Tool'
