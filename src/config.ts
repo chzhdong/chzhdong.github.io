@@ -56,13 +56,6 @@ export const profileConfig: ProfileConfig = {
   bio: 'ZhenDong\'s Blog.',
   links: [
     {
-      name: 'Twitter',
-      icon: 'fa6-brands:twitter',       // Visit https://icones.js.org/ for icon codes
-                                        // You will need to install the corresponding icon set if it's not already included
-                                        // `pnpm add @iconify-json/<icon-set-name>`
-      url: 'https://twitter.com',
-    },
-    {
       name: 'GitHub',
       icon: 'fa6-brands:github',
       url: 'https://github.com/chzhdong/chzhdong.github.io',
