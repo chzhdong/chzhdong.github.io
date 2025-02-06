@@ -4,7 +4,7 @@ published: 2024-12-19
 description: 'SSM Framework'
 image: ''
 tags: ["SSM"]
-category: 'Tool'
+category: 'Java'
 draft: false 
 lang: 'zh_CN'
 ---

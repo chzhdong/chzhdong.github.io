@@ -4,7 +4,7 @@ published: 2025-01-08
 description: 'Maven Tutorial'
 image: ''
 tags: ["Maven"]
-category: 'Tool'
+category: 'Java'
 draft: false 
 lang: 'zh_CN'
 ---
